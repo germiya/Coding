@@ -100,7 +100,7 @@ const ast = {
         value: 8
     }
 };
-const ast1 = {
+const astTest = {
   type: 'binary',
   operator: '+',
   left:{
@@ -112,23 +112,24 @@ const ast1 = {
     value:2
   }
 };
-var exp = '';
+
+
+print(astTest); 
+console.log('\n',evaluate(astTest));
+
 print(ast);
-console.log(exp)
+console.log('\n', evaluate(ast));
+
 function print(ast) {
   // this function should print out the JS expression that the AST represents
   if(ast.type === 'literal')
-    exp+= (ast.value)
+    process.stdout.write(`${ast.value}`)
   else{
     print(ast.left);
-    exp+= ` ${ast.operator} `;
+    process.stdout.write(` ${ast.operator} `);
     print(ast.right);
   }
 }
-
-var result = evaluate(ast);
-
-console.log(result);
 
 function evaluate(ast) {
   // this function should evaluate the JS expression represented by the AST
