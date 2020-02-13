@@ -37,18 +37,21 @@ function deleteNPrintByOrder(order, start){
   prev = start;
   while(current != null){
     console.log(`index: ${index}`);
-    if(index % order == 0) {
+    if(index % order == 0 ) {
       prev.next = current.next;
-      console.log(`-------------Deleted item val: ${current.value}`);
-      printListItems(start);      
-      //console.log(index+" Deleted element: ",current);
+      console.log(`-------------------Deleted item val: ${current.value}`);
+        
     }
     else prev = current;
     
     if(!confirm("DO u want to continue")) break;
     //if(prev.next == start ) break;//current = null;
-    else current = current.next;
+    else {
+    current = current.next;
+    if(current == prev) break;
+    printListItems(start); 
     index++;
+    }
   }
 }
 
