@@ -44,14 +44,20 @@ function deleteNPrintByOrder(order, start){
     }
     else prev = current;
     
-    if(!confirm("DO u want to continue")) break;
+    if(!confirm("DO u want to continue" )) break;
     //if(prev.next == start ) break;//current = null;
     else {
     current = current.next;
-    if(current == prev) break;
-    printListItems(start); 
+    if(current == prev){
+      console.log(`-------------------Deleted item val: ${current.value}`);
+      current = null; start = null;
+      printListItems(start);
+      break;
+    }
+    
     index++;
     }
+    console.log(current)
   }
 }
 
