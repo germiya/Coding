@@ -66,4 +66,4 @@ for(i = 1 ;i <= 6; i++) addNodeToList(new ListItem(i));
 console.log("******************LIST ITEMS*********************"); 
 printListItems(start);
 console.log("*************************************************");
-deleteNPrintByOrder(2, start);
+deleteNPrintByOrder(3, start);
